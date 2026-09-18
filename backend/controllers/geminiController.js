@@ -14,7 +14,11 @@ async function askGemini(req, res) {
     const base64PDF = req.file.buffer.toString("base64");
 
     const response = await genAi.models.generateContent({
+<<<<<<< HEAD
       model: "gemini-3.6-flash",
+=======
+      model: "gemini-2.5-flash",
+>>>>>>> 297c1176cbff12694727993366e0f75b4bd02778
       contents: [
         {
           role: "user",
@@ -92,4 +96,8 @@ async function askGemini(req, res) {
   }
 }
 
+<<<<<<< HEAD
 export default askGemini;
+=======
+export default askGemini;
+>>>>>>> 297c1176cbff12694727993366e0f75b4bd02778
