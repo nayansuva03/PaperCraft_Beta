@@ -1,0 +1,36 @@
+{
+  "name": "papercraft-backend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@getbrevo/brevo": "^6.0.2",
+    "@google/genai": "^2.10.0",
+    "@sendgrid/mail": "^8.1.6",
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.10.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.4",
+    "multer": "^2.2.0",
+    "nodemailer": "^9.0.3",
+    "pdfjs-dist": "^6.0.227",
+    "razorpay": "^2.9.8",
+    "resend": "^6.18.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
+    "nodemon": "^3.1.10"
+  }
+}
