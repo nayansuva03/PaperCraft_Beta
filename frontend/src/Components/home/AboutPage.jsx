@@ -139,8 +139,9 @@ function About() {
       setIsPaying(false);
     }
   };
+
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-800 w-full max-w-4xl p-6 sm:p-10 my-6 transition-colors duration-300 animate-in fade-in duration-300">
+    <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-800 w-full max-w-4xl mx-auto p-6 sm:p-10 my-6 transition-colors duration-300 animate-in fade-in">
 
       {/* Header Banner */}
       <div className="border-b border-slate-100 dark:border-slate-800 pb-6 mb-8 text-center sm:text-left">

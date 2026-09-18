@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/common/Navbar";
 import PdfUploadPage from "./Components/home/PdfUploadPage";
 import About from "./Components/home/AboutPage";
@@ -15,8 +16,6 @@ import OnlineQuiz from "./Components/End_pages/OnlineQuiz";
 import LogIn from "./Components/common/Log_In";
 import SignIn from "./Components/common/Sign_In";
 import ForgotPassword from "./Components/common/Forgot_password";
-import { Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { setname, setemail, setisLoggedIn } from "./Redux/userSlice";
 
 function App() {
@@ -42,9 +41,7 @@ function App() {
       });
       if (response.ok) {
         const data = await response.json();
-
         loginUser(data.user);
-
         return;
       }
 
@@ -71,24 +68,20 @@ function App() {
       });
       if (retryResponse.ok) {
         const data = await retryResponse.json();
-
         loginUser(data.user);
-
         return;
       }
       logoutUser();
-      return;
-      
     } catch (error) {
       console.error(error);
       logoutUser();
     }
   }
-  
+
   useEffect(() => {
     checkAuth();
   }, []);
-  
+
   useEffect(() => {
     const root = document.documentElement;
     if (theme === "dark") {
@@ -102,7 +95,7 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
       <Navbar />
-      <main className="flex justify-center items-center py-10 px-4">
+      <main className="w-full">
         <Routes>
           <Route path="/" element={<PdfUploadPage />} />
           <Route path="/SavedServices" element={<SavedServices />} />

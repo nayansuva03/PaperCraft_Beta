@@ -22,6 +22,7 @@ function PdfUploadPage() {
     const allArePDFs = file.every((f) => f.type === "application/pdf");
 
     if (!allArePDFs) {
+      e.preventDefault();
       alert("All uploaded files must be valid PDF documents.");
       return;
     }
@@ -30,7 +31,7 @@ function PdfUploadPage() {
   }
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl shadow-xl w-full max-w-md flex flex-col gap-6 border border-slate-100 dark:border-slate-800 transition-colors duration-300">
+    <div className="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl shadow-xl w-full max-w-md mx-auto my-12 flex flex-col gap-6 border border-slate-100 dark:border-slate-800 transition-colors duration-300">
       <div className="text-center">
         <h1 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 mb-2">Upload Document</h1>
         <p className="text-slate-500 dark:text-slate-400 text-sm">Upload your PDF to generate questions.</p>
@@ -57,7 +58,7 @@ function PdfUploadPage() {
       </div>
 
       <NavLink
-        to="Homeoptions"
+        to="/HomeOptions"
         onClick={handelFileSelect}
         className={`w-full py-3.5 px-4 rounded-xl font-bold text-white text-center transition-all duration-200 active:scale-[0.99]
           ${file.length > 0

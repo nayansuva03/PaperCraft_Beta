@@ -9,7 +9,7 @@ import {
   Tag,
   Lock,
   FolderOpen,
-  Loader2
+  Loader2,
 } from "lucide-react";
 
 function SavedServices() {
@@ -84,13 +84,13 @@ function SavedServices() {
   // Feature Locked View
   if (!isLoggedIn) {
     return (
-      <div className="min-h-[calc(100vh-80px)] bg-[#0A0D18] text-white flex items-center justify-center p-6">
-        <div className="max-w-md w-full bg-[#121829] border border-slate-800 rounded-2xl p-8 text-center shadow-xl">
+      <div className="min-h-[calc(100vh-80px)] w-full flex items-center justify-center p-6 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white">
+        <div className="max-w-md w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 text-center shadow-xl">
           <div className="w-16 h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-indigo-500/20">
-            <Lock className="w-8 h-8 text-indigo-400" />
+            <Lock className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
           </div>
           <h2 className="text-2xl font-bold mb-2">Feature Locked</h2>
-          <p className="text-slate-400 mb-6 text-sm">
+          <p className="text-slate-600 dark:text-slate-400 mb-6 text-sm">
             Please sign in to access and manage your saved services and documents.
           </p>
           <button
@@ -107,9 +107,9 @@ function SavedServices() {
   // Loading View
   if (loading) {
     return (
-      <div className="min-h-[calc(100vh-80px)] bg-[#0A0D18] text-white flex flex-col items-center justify-center gap-3">
+      <div className="min-h-[calc(100vh-80px)] w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white flex flex-col items-center justify-center gap-3">
         <Loader2 className="w-8 h-8 text-indigo-500 animate-spin" />
-        <p className="text-slate-400 text-sm">Loading saved PDFs...</p>
+        <p className="text-slate-600 dark:text-slate-400 text-sm">Loading saved PDFs...</p>
       </div>
     );
   }
@@ -117,8 +117,8 @@ function SavedServices() {
   // Error View
   if (error) {
     return (
-      <div className="min-h-[calc(100vh-80px)] bg-[#0A0D18] text-white flex items-center justify-center p-6">
-        <div className="bg-red-500/10 border border-red-500/20 text-red-400 px-6 py-4 rounded-xl max-w-md text-center">
+      <div className="min-h-[calc(100vh-80px)] w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white flex items-center justify-center p-6">
+        <div className="bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 px-6 py-4 rounded-xl max-w-md text-center">
           <p className="font-medium">{error}</p>
         </div>
       </div>
@@ -128,13 +128,13 @@ function SavedServices() {
   // Empty State
   if (pdfs.length === 0) {
     return (
-      <div className="min-h-[calc(100vh-80px)] bg-[#0A0D18] text-white flex items-center justify-center p-6">
-        <div className="max-w-md w-full bg-[#121829] border border-slate-800 rounded-2xl p-8 text-center shadow-xl">
-          <div className="w-16 h-16 bg-slate-800/50 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-slate-700/50">
-            <FolderOpen className="w-8 h-8 text-slate-400" />
+      <div className="min-h-[calc(100vh-80px)] w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white flex items-center justify-center p-6">
+        <div className="max-w-md w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 text-center shadow-xl">
+          <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800/50 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-slate-200 dark:border-slate-700/50">
+            <FolderOpen className="w-8 h-8 text-slate-500 dark:text-slate-400" />
           </div>
           <h2 className="text-xl font-bold mb-2">No saved PDFs yet</h2>
-          <p className="text-slate-400 text-sm leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
             Generate a Max Question paper, Exam Paper, or Quiz Result and it will appear here.
           </p>
         </div>
@@ -144,16 +144,16 @@ function SavedServices() {
 
   // Main Grid Layout
   return (
-    <div className="min-h-[calc(100vh-80px)] bg-[#0A0D18] text-white py-10 px-6 sm:px-10">
+    <div className="min-h-[calc(100vh-80px)] w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white py-10 px-6 sm:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Saved Services</h1>
-            <p className="text-slate-400 text-sm mt-1">
+            <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
               Access and manage all your generated PDF documents in one place.
             </p>
           </div>
-          <span className="self-start sm:self-auto bg-slate-800 border border-slate-700/80 px-3 py-1 rounded-full text-xs text-slate-300 font-medium">
+          <span className="self-start sm:self-auto bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700/80 px-3 py-1 rounded-full text-xs text-slate-700 dark:text-slate-300 font-medium">
             {pdfs.length} {pdfs.length === 1 ? "Document" : "Documents"}
           </span>
         </div>
@@ -162,25 +162,25 @@ function SavedServices() {
           {pdfs.map((pdf) => (
             <div
               key={pdf._id}
-              className="bg-[#121829] border border-slate-800/80 rounded-2xl p-5 hover:border-slate-700 transition duration-200 flex flex-col justify-between gap-5 group"
+              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl p-5 hover:border-slate-300 dark:hover:border-slate-700 transition duration-200 flex flex-col justify-between gap-5 group shadow-sm"
             >
               <div>
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0">
-                    <FileText className="w-5 h-5 text-indigo-400" />
+                    <FileText className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                   </div>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700/50 capitalize">
-                    <Tag className="w-3 h-3 text-indigo-400" />
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50 capitalize">
+                    <Tag className="w-3 h-3 text-indigo-600 dark:text-indigo-400" />
                     {pdf.type}
                   </span>
                 </div>
 
-                <h2 className="font-semibold text-lg text-slate-100 group-hover:text-indigo-400 transition duration-200 line-clamp-1">
+                <h2 className="font-semibold text-lg text-slate-800 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition duration-200 line-clamp-1">
                   {pdf.title}
                 </h2>
 
-                <div className="flex items-center gap-2 text-xs text-slate-400 mt-2">
-                  <Calendar className="w-3.5 h-3.5 text-slate-500" />
+                <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mt-2">
+                  <Calendar className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                   <span>
                     {new Date(pdf.createdAt).toLocaleDateString(undefined, {
                       year: "numeric",
@@ -191,7 +191,7 @@ function SavedServices() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 pt-3 border-t border-slate-800/60">
+              <div className="flex items-center gap-3 pt-3 border-t border-slate-200 dark:border-slate-800/60">
                 <a
                   href={pdf.cloudinaryUrl}
                   target="_blank"
@@ -205,11 +205,11 @@ function SavedServices() {
                 <button
                   onClick={() => handleDelete(pdf._id)}
                   disabled={deletingId === pdf._id}
-                  className="p-2 text-slate-400 hover:text-red-400 bg-slate-800/50 hover:bg-red-500/10 rounded-lg border border-slate-700/50 hover:border-red-500/20 transition duration-200 disabled:opacity-50"
+                  className="p-2 text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 bg-slate-100 dark:bg-slate-800/50 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg border border-slate-200 dark:border-slate-700/50 hover:border-red-300 dark:hover:border-red-500/20 transition duration-200 disabled:opacity-50"
                   title="Delete PDF"
                 >
                   {deletingId === pdf._id ? (
-                    <Loader2 className="w-4 h-4 animate-spin text-red-400" />
+                    <Loader2 className="w-4 h-4 animate-spin text-red-500 dark:text-red-400" />
                   ) : (
                     <Trash2 className="w-4 h-4" />
                   )}
